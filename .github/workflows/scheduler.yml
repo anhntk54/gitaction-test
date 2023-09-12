@@ -1,7 +1,7 @@
 name: Scheduler
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   master:
