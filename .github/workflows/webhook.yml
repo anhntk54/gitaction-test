@@ -26,3 +26,10 @@ jobs:
           npm install --no-save | grep -v 'YN0013'
           npm run data:update-time
 
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Scheduler
+          author_email: scheduler@github.io
+          message: 'Update Time Now'
+
