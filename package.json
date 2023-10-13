@@ -4,7 +4,8 @@
   "description": "Fetch and cache Subspace Data to JSON file with github action",
   "main": "index.js",
   "scripts": {
-    "data:update-network-info": "node ./scripts/updateDataNetworkInfo.js"
+    "data:update-network-info": "node ./scripts/updateDataNetworkInfo.js",
+    "data:update-time": "node ./scripts/updateDateNow.js"
   },
   "repository": {
     "type": "git",
