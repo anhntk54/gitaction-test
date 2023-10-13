@@ -4,18 +4,10 @@ on:
   # workflow_dispatch is mandatory, so that Artifactory can trigger
   # the workflow through GitHub REST API.
   workflow_dispatch:
-    # inputs are optional, they may be used to convey contextual data
-    # from the JFrog event to the workflow.
-    inputs:
-      artifact_path:
-        required: true
-        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print artifact_path
-        run: echo  The path is ${{ inputs.artifact_path }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -24,7 +16,7 @@ jobs:
       - name: Update data
         run: |
           npm install --no-save | grep -v 'YN0013'
-          npm run data:update-time "${{ inputs.artifact_path }}"
+          npm run data:update-time "
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
