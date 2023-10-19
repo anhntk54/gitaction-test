@@ -4,6 +4,16 @@ on:
   # workflow_dispatch is mandatory, so that Artifactory can trigger
   # the workflow through GitHub REST API.
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch name'
+        required: true
+        type: string
+        default: main
+      folder:
+        description: 'Folder name'
+        required: false
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
